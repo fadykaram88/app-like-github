@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add File</title>
+</head>
+<body>
+    <h1>Add a File to the Repository</h1>
+    <form action="{{ url_for('add_file') }}" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Add File</button>
+    </form>
+</body>
+</html>
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VCS Files</title>
+</head>
+<body>
+    <h1>Version Control System</h1>
+    <a href="{{ url_for('add_file') }}">Add File</a>
+    <h2>Files in Repository:</h2>
+    <ul>
+        {% for file in files %}
+        <li><a href="{{ url_for('view_file', file_name=file) }}">{{ file }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add File</title>
+</head>
+<body>
+    <h1>Add a New File</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="file">Choose file:</label>
+        <input type="file" name="file" id="file" required>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
+
